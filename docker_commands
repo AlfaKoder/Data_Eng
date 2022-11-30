@@ -1,0 +1,43 @@
+  
+## Docker commands used to build the application
+
+docker login
+docker build -t techtrends .
+
+## Docker commands used to run the application
+
+docker run -dp 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+
+docker logs 47645b9e34f7cb8a09cf5e4a289b7050feb46758c8654f5d44d6fd8633973557
+
+## Logs from the container running the TechTrends application
+
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [29/Nov/2022 22:24:07] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:24:07] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:24:07] "GET /favicon.ico HTTP/1.1" 404 -
+172.17.0.1 - - [29/Nov/2022 22:24:48] "GET /create HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:24:48] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [29/Nov/2022 22:25:36] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [29/Nov/2022 22:25:36] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:25:36] "GET /static/css/main.css HTTP/1.1" 304 -
+172.17.0.1 - - [29/Nov/2022 22:25:56] "GET /healthz HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:26:12] "GET /metrics HTTP/1.1" 200 -
+172.17.0.1 - - [29/Nov/2022 22:26:36] "GET /home HTTP/1.1" 404 -
+
+## Tagging the Docker image
+
+docker tag techtrends manilla/techtrends:v1.0.0
+
+## command to push the docker image to the Dockerhub
+
+docker push manilla/techtrends:v1.0.0
