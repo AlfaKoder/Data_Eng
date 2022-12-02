@@ -41,3 +41,12 @@ docker tag techtrends manilla/techtrends:v1.0.0
 ## command to push the docker image to the Dockerhub
 
 docker push manilla/techtrends:v1.0.0
+
+## Git Initialization
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/AlfaKoder/Data_Eng.git
+git push -u origin main
+
